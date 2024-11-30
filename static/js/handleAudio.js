@@ -44,7 +44,7 @@
     fReader.onload=_=>{
       let bs64 = fReader.result,
           data = {...apiKey&&{apiKey}, recording:bs64.split('base64,')[1]};
-      console.log('::DATA::'),
+      console.log('::DATA::', data),
       /** stop the stream after streaming it to remove the recording icon and ensure all recordings are readAsDataURL prior */
       _stream.getAudioTracks().forEach(function(track) {
         track.stop();
